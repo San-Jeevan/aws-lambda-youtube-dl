@@ -12,3 +12,8 @@ It will create an REST endpoint. POST t it with a json object:
 
 The code is not "perfect", but what is important is the essence of the pipelining function + the usage of youtube-dl in nodejs 12.
 
+# Important notice
+Youtube sometimes changes their API, so the youtube-dl library may need an update to work.
+This is how to do it:
+Download the zip file, extract to a folder. Go to the package.json and update the version of ytdl-core, then do a "npm install". Then zip the folder again (make sure you keep the folder structure) and upload to AWS Lambda layer
+
