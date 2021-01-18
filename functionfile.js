@@ -15,14 +15,14 @@ const cors = {
       };
 
 
-AWS.config.update({ signatureVersion: 'v4', accessKeyId: YOUR_ACCESS_KEY, secretAccessKey: YOUR_SECRET, region: AWS_REGION });
+AWS.config.update({ signatureVersion: 'v4', accessKeyId: S3_ACCESS_KEY, secretAccessKey: S3_SECRET, region: S3_REGION });
 
 function FetchAndUploadToS3(url, s3filename){
   return new Promise((resolve, reject) => {
   const passtrough = new stream.PassThrough();
   const upload = new AWS.S3.ManagedUpload({
     params: {
-      Bucket: YOUR_S3_BUCKET,
+      Bucket: S3_BUCKET,
       Key: s3filename+".mp4",
       ACL: "private",
       Body: passtrough
